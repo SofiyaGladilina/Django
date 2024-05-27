@@ -3,12 +3,22 @@ from django.http import HttpResponse
 # Create your views here.
 
 def home(request):
-    context = """
-    "name" = "Петров Иван Николаевич"
-    "email" = "my@email.ru"
-"""
+    text = """
+    <h1>"Изучаем django"</h1>
+    <strong>Автор</strong>: <i>Иванов И.П.</i>
+    """
+    return HttpResponse
+
+
+user = """
+    Имя: Иван <br>
+    Отчество: Петрович<br>
+    Фамилия: Иванов<br>
+    телефон: 8-923-600-01-02<br>
+    email: vasya@mail.ru"""
+def about(request):
+    return HttpResponse(user)
     
-    return render(request, 'index.html', context)
 
 
 
